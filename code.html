@@ -8,7 +8,7 @@
       var mdp=document.getElementById('motdepasse').value;
 	        var image = document.querySelector( "#imageGif" );
 	                 if(image && image.style) {image.style.height = '86px';}
-	if (mdp=='sources'){
+	if (mdp=='sources' || mdp=='SOURCES' || mdp=='Sources'){
        		 image.src= "https://s3.eu-west-1.amazonaws.com/genial.ly/57403dbba7215f1bd05dc262/352a6dd4-bf5b-4008-9dbd-9dadb89cd735.gif"; // correct
       }else {
        image.src= "https://s3.eu-west-1.amazonaws.com/genial.ly/57403dbba7215f1bd05dc262/ad3e4b99-75d7-4414-8525-646fcd6c6b86.png"; // faux 
