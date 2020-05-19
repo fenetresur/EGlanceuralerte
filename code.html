@@ -1,0 +1,28 @@
+  <html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type" /></head>
+<body>
+
+<script>
+      function Verif(){
+      var mdp=document.getElementById('motdepasse').value;
+	        var image = document.querySelector( "#imageGif" );
+		if (mdp=='sources'){
+        image.src= "https://media1.giphy.com/media/5BZslN01evFcI/source.gif"; // correct
+      }else {
+        image.src= "https://raw.githubusercontent.com/Tibolte/ElasticDownload/master/fail.gif" ; // faux
+      }
+    }
+   </script>
+
+ 
+<form name="Motdepasse">
+<b>Réponse</b>&nbsp;
+	<input size="35" placeholder="Tapez le mot de passe" id="motdepasse" type="text" /><br /><br>
+<input type="button" onclick="Verif()" value="Soumettre" />
+    <br/><br/><br/>
+        <div><img id="imageGif" src="" /></div>
+    </div>
+</form>
+</body>
+</html>
