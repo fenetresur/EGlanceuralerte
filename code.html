@@ -7,7 +7,7 @@
       function Verif(){
       var mdp=document.getElementById('motdepasse').value;
 	        var image = document.querySelector( "#imageGif" );
-	                 if(image && image.style) {image.style.height = '86px';}
+	                 if(image && image.style) {image.style.height = '45px';}
 	if (mdp=='sources' || mdp=='SOURCES' || mdp=='Sources'){
        		 image.src= "https://s3.eu-west-1.amazonaws.com/genial.ly/57403dbba7215f1bd05dc262/352a6dd4-bf5b-4008-9dbd-9dadb89cd735.gif"; // correct
       }else {
@@ -18,9 +18,9 @@
 
 <center> 
 <form name="Motdepasse">
-	<input size="15" placeholder="Tapez le mot de passe" id="motdepasse" type="text" /><br /><br>
-<input type="button" onclick="Verif()" value="Soumettre" />
-    <br/><br/><br/>
+	<input size="15" placeholder="Tapez le mot de passe" id="motdepasse" type="text" /><br />
+<input type="button" onclick="Verif()" value="Cliquer pour soumettre" />
+    <br/>
         <div><img id="imageGif" src="" /></div>
     </div>
 </form>
