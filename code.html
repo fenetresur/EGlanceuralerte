@@ -11,8 +11,9 @@
 	        var image = document.querySelector( "#imageGif" );
 	                 if(image && image.style) {image.style.height = '45px';}
 	if (mdp=='sources' || mdp=='SOURCES' || mdp=='Sources'){
-       		 image.src= "https://s3.eu-west-1.amazonaws.com/genial.ly/57403dbba7215f1bd05dc262/352a6dd4-bf5b-4008-9dbd-9dadb89cd735.gif"; // correct
-    div.innerHTML= 'Téléchargement réussi.';div.style.color="navy"
+       		 image.src= "https://s3.eu-west-1.amazonaws.com/genial.ly/57403dbba7215f1bd05dc262/abafead6-e926-4920-a21f-32edc183a7a4.gif"; // correct
+    div.innerHTML= 'Téléchargement réussi';div.style.color="black"
+   
     }else {
        image.src= "https://s3.eu-west-1.amazonaws.com/genial.ly/57403dbba7215f1bd05dc262/ad3e4b99-75d7-4414-8525-646fcd6c6b86.png"; // faux 
             div.innerHTML= 'Erreur'; div.style.color="red"}
@@ -23,6 +24,7 @@
 <form name="Motdepasse">
 	<input size="15" placeholder="Tapez le mot de passe" id="motdepasse" type="text" /><br /><br>
 <input type="button" onclick="Verif()" value="Soumettre" />
+ 
     <br/><br>
         <div><img id="imageGif" src="" /></div>
   <b><div id="bravo"></div></b>
