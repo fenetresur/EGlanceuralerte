@@ -1,35 +1,34 @@
 <html>
-<head>
-<meta content="text/html; charset=UTF-8" http-equiv="Content-Type" /></head>
-<body>
+	<head>
+		<meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+	</head>
+	<body>
+		<script>
+			function Verif(){
+				var div = document.getElementById('bravo');
+				var mdp=document.getElementById('motdepasse').value;
+				var image = document.querySelector( "#imageGif" );
+				if(image && image.style) {image.style.height = '45px';}
+				if (mdp=='sources' || mdp=='SOURCES' || mdp=='Sources'){
+					image.src= "https://s3.eu-west-1.amazonaws.com/genial.ly/57403dbba7215f1bd05dc262/abafead6-e926-4920-a21f-32edc183a7a4.gif"; // correct
+					div.innerHTML= 'Téléchargement réussi';
+					div.style.color="black";
+					return false;
+				}else {
+					image.src= "https://s3.eu-west-1.amazonaws.com/genial.ly/57403dbba7215f1bd05dc262/ad3e4b99-75d7-4414-8525-646fcd6c6b86.png"; // faux 
+					div.innerHTML= 'Erreur';
+					div.style.color="red";
+					return false;
+				}
+			}
+		</script>
 
-  
-<script>
-      function Verif(){
-          var div = document.getElementById('bravo');
-      var mdp=document.getElementById('motdepasse').value;
-	        var image = document.querySelector( "#imageGif" );
-	                 if(image && image.style) {image.style.height = '45px';}
-	if (mdp=='sources' || mdp=='SOURCES' || mdp=='Sources'){
-       		 image.src= "https://s3.eu-west-1.amazonaws.com/genial.ly/57403dbba7215f1bd05dc262/abafead6-e926-4920-a21f-32edc183a7a4.gif"; // correct
-    div.innerHTML= 'Téléchargement réussi';div.style.color="black"
-   
-    }else {
-       image.src= "https://s3.eu-west-1.amazonaws.com/genial.ly/57403dbba7215f1bd05dc262/ad3e4b99-75d7-4414-8525-646fcd6c6b86.png"; // faux 
-            div.innerHTML= 'Erreur'; div.style.color="red"}
-    }
-   </script>
-
-<center> 
-<form name="Motdepasse">
-	<input size="15" placeholder="Tapez le mot de passe" id="motdepasse" type="text" />
-<input type="button" onclick="Verif()" value="Cliquer pour valider" />
- 
-    <br/><br>
-        <div><img id="imageGif" src="" /></div>
-  <b><div id="bravo"></div></b>
-    </div>
-</form>
-	</center>
-</body>
-</html>
+      		<center> 
+			<form name="Motdepasse" onsubmit="return Verif()">
+				<input size="15" placeholder="Tapez le mot de passe" id="motdepasse" type="text" />
+				<input type="submit" value="Ok" /><br><br>
+				<div><img id="imageGif" src="" /></div>
+				<b><div id="bravo"></div></b>
+			</form>
+		</center>
+	</body>
