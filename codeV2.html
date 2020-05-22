@@ -35,7 +35,8 @@ window.onload = function () {
 };
       
       function Verif(){
-				var chrono = document.getElementById('time');	
+				var chrono = document.getElementById('time');
+        		var formulaire = document.getElementById('champ');
                 var div = document.getElementById('bravo');
 				var mdp=document.getElementById('motdepasse').value;
 				var image = document.querySelector( "#imageGif" );
@@ -44,6 +45,8 @@ window.onload = function () {
 					image.src= "https://s3.eu-west-1.amazonaws.com/genial.ly/57403dbba7215f1bd05dc262/abafead6-e926-4920-a21f-32edc183a7a4.gif"; // correct
 					div.innerHTML= 'Téléchargement réussi';
 					div.style.color="black";
+                    formulaire.style.visibility = "hidden";
+                    formulaire.style.height = "0";
                     chrono.style.visibility = "hidden";
                     chrono.style.height = "0";
 					return false;
@@ -64,7 +67,7 @@ window.onload = function () {
 	display: block;
 	margin: auto;
 	width:100%;
-	font-size: 30vw;}
+	font-size: 5vw;}
 	#time.on{
 		color: red;
 	  animation: blinker 1s linear infinite;	
@@ -86,12 +89,12 @@ window.onload = function () {
 	<body>
     <div> <a id="lien"><span id="time">60.1:00</span></a></div>
 <center> 
-			<form name="Motdepasse" onsubmit="return Verif()">
+			<form name="Motdepasse" onsubmit="return Verif()" id="champ">
 				<input size="15" placeholder="Tapez le mot de passe" id="motdepasse" type="text" />
 				<input type="submit" value="Ok" /><br><br>
-				<div><img id="imageGif" src="" /></div>
-				<b><div id="bravo"></div></b>
 			</form>
+  				<div><img id="imageGif" src="" /></div>
+				<b><div id="bravo"></div></b>
 		</center>
   </body>
   </html>
