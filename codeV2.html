@@ -1,31 +1,97 @@
-  <html>
-<head>
-<meta content="text/html; charset=UTF-8" http-equiv="Content-Type" /></head>
-<body>
 
-<script>
+<!doctype html>
+<html>
+    <head>
+	<title>Minuteur de S'CAPE</title>
+<meta name="description" content="Minuteur de S'CAPE">
+  <meta name="keywords" content="Escape game, jeu évasion, code, crypto, polychrome">
+  <meta name="author" content="eNePe pour S'CAPE">
+
+  
+		
+	<script type="text/javascript">
+	function startTimer(duration, display) {
+    var timer = duration, minutes, seconds;
+    setInterval(function () {
+        minutes = parseInt(timer / 60, 10)
+        seconds = parseInt(timer % 60, 10);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.textContent = minutes + ":" + seconds;
+
+        if (--timer < 0) {
+            timer = 0;
+			document.getElementById('time').className = 'on';
+        }
+    }, 1000);
+}
+
+window.onload = function () {
+    var fiveMinutes = 60 * 60,
+        display = document.querySelector('#time');
+    startTimer(fiveMinutes, display);
+};
+      
       function Verif(){
-      var mdp=document.getElementById('motdepasse').value;
-	        var image = document.querySelector( "#imageGif" );
-	                 if(image && image.style) {image.style.height = '45px';}
-	if (mdp=='sources' || mdp=='SOURCES' || mdp=='Sources'){
-       		 image.src= "https://s3.eu-west-1.amazonaws.com/genial.ly/57403dbba7215f1bd05dc262/352a6dd4-bf5b-4008-9dbd-9dadb89cd735.gif"; // correct
-      }else {
-       image.src= "https://s3.eu-west-1.amazonaws.com/genial.ly/57403dbba7215f1bd05dc262/ad3e4b99-75d7-4414-8525-646fcd6c6b86.png"; // faux 
-      }
-    }
-    
+				var chrono = document.getElementById('time');	
+                var div = document.getElementById('bravo');
+				var mdp=document.getElementById('motdepasse').value;
+				var image = document.querySelector( "#imageGif" );
+				if(image && image.style) {image.style.height = '45px';}
+				if (mdp=='sources' || mdp=='SOURCES' || mdp=='Sources'){
+					image.src= "https://s3.eu-west-1.amazonaws.com/genial.ly/57403dbba7215f1bd05dc262/abafead6-e926-4920-a21f-32edc183a7a4.gif"; // correct
+					div.innerHTML= 'Téléchargement réussi';
+					div.style.color="black";
+                    chrono.style.visibility = "hidden";
+                    chrono.style.height = "0";
+					return false;
+				}else {
+					image.src= "https://s3.eu-west-1.amazonaws.com/genial.ly/57403dbba7215f1bd05dc262/ad3e4b99-75d7-4414-8525-646fcd6c6b86.png"; // faux 
+					div.innerHTML= 'Erreur';
+					div.style.color="red";
+					return false;
+				}
+			}
+      
+	</script>
+	<style type="text/css">
+	#time{
+		color: black;
+		background-color: ;
+	text-align: center;
+	display: block;
+	margin: auto;
+	width:100%;
+	font-size: 30vw;}
+	#time.on{
+		color: red;
+	  animation: blinker 1s linear infinite;	
+	  height: 100wh;
+	  
+	}
+	#lien{
+	text-decoration:none;
+	}
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+      
 
-   </script>
-
+	</style>
+	  </head>
+	<body>
+    <div> <a id="lien"><span id="time">60.1:00</span></a></div>
 <center> 
-<form name="Motdepasse">
-	<input size="15" placeholder="Tapez le mot de passe" id="motdepasse" type="text" onkeyup="Verif()" /><br /><br>
-   
-        <div><img id="imageGif" src="" /></div>
-    </div>
-</form>
-
-	</center>
-</body>
-</html>
+			<form name="Motdepasse" onsubmit="return Verif()">
+				<input size="15" placeholder="Tapez le mot de passe" id="motdepasse" type="text" />
+				<input type="submit" value="Ok" /><br><br>
+				<div><img id="imageGif" src="" /></div>
+				<b><div id="bravo"></div></b>
+			</form>
+		</center>
+  </body>
+  </html>
