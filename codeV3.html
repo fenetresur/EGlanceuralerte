@@ -25,8 +25,8 @@
                   		formulaire.style.height = "0";
                 	chrono.style.visibility = "hidden";
                   		chrono.style.height = "0";
-                  	fin.style.visibility = "visible";
-                        fin.style.height = "250px";
+			fin.style.visibility = "visible";
+				fin.style.height = "250px";
 			return false;
 		}
 		else {
@@ -38,9 +38,9 @@
 	}
      
 	function startTimer(duration, display) {
-      var formulaire = document.getElementById('champ');
-      var stop = document.getElementById('echec');  	
-      var timer = duration, minutes, seconds;
+		var formulaire = document.getElementById('champ');
+		var stop = document.getElementById('echec');  	
+		var timer = duration, minutes, seconds;
     		setInterval(function () {
        			minutes = parseInt(timer / 60, 10)
        			seconds = parseInt(timer % 60, 10);
@@ -132,7 +132,7 @@
 		appel au Consortium International pour le Journalisme d'Investigation (ICIJ). Au total, une centaine de vos 
 		confrères internationaux ont travaillé ensemble pour révéler en avril 2016 le scandale des <b><i>Panama papers</i></b>.
 		<br><a href="https://www.francetvinfo.fr/economie/fraude/panama-papers/video-france-2-cash-investigation-platini-messi-le-premier-ministre-islandais-panama-papers-enquete-sur-les-societes-offshore-et-les-paradis-fiscaux_1388631.html" target=_blank>En savoir plus</a></div>
-    <div id="echec"><p><b>Le temps est dépassé</b></p><p>Pour préserver la sécurité du lanceur d'alerte, le document a été effacé.</p></div>
+   	<div id="echec" style="font-family: sans-serif;"><p><b>Le temps est dépassé</b></p><p>Pour préserver la sécurité du lanceur d'alerte, le document a été effacé.</p></div>
 	</center> 
   </body>
   </html>
