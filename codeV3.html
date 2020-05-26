@@ -67,7 +67,14 @@ window.onload = function Minuteur() {
       
 	</script>
 	<style type="text/css">
-	#time{
+div.scroll {
+  width: 180px;
+  height: 350px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+      
+      #time{
 		color: black;
 		background-color: ;
 	text-align: center;
@@ -96,19 +103,19 @@ window.onload = function Minuteur() {
 	</style>
 	  </head>
 	<body>
-	<center> 
+      <center>
 	<div id="consigne">
 		<p>En tant que journaliste, vous venez de recevoir un document confidentiel de la part d'un lanceur d'alerte anonyme.</p>
 		<p><b>Vous avez 60 minutes pour le télécharger avant sa suppression automatique.</b></p></div>
     <div> <a id="time"><span >60:00</span></a></div>
-
+ 
 			<form name="Motdepasse" onsubmit="return Verif()" id="champ">
 				<input size="15" placeholder="Tapez le mot de passe" id="motdepasse" type="text" />
 				<input type="submit" value="Ok" /><br><br>
 			</form>
   				<div><img id="imageGif" src="" /></div>
 				<div id="commentaire"></div>
-  <div id="bravo" style="overflow: scroll; width: 180px; height: 100%;"><p><b><big>BRAVO !</big></b></p>Vous venez de télécharger 11,5 millions de documents confidentiels, issus d'un cabinet d'avocats du Panama (Amérique centrale), spécialisé dans la création de sociétés off-shore. Ces sociétés écrans, légalement créées, servent généralement à cacher des activités illégales : blanchiment d'argent et évasion fiscale, dans les paradis fiscaux.</br></br>Pour vous aider à analyser les données envoyées anonymement par le lanceur d'alerte, vous faites appel au Consortium International pour le Journalisme d'Investigation (ICIJ). Au total, une centaine de vos confrères internationaux ont travaillé ensemble pour révéler en avril 2016 le scandale des <b><i>Panama papers</i></b>.<br><a href="https://www.francetvinfo.fr/economie/fraude/panama-papers/video-france-2-cash-investigation-platini-messi-le-premier-ministre-islandais-panama-papers-enquete-sur-les-societes-offshore-et-les-paradis-fiscaux_1388631.html" target=_blank>En savoir plus</a></div>
+  <div id="bravo" class="scroll"><p><b><big>BRAVO !</big></b></p>Vous venez de télécharger 11,5 millions de documents confidentiels, issus d'un cabinet d'avocats du Panama (Amérique centrale), spécialisé dans la création de sociétés off-shore. Ces sociétés écrans, légalement créées, servent généralement à cacher des activités illégales : blanchiment d'argent et évasion fiscale, dans les paradis fiscaux.<br>Pour vous aider à analyser les données envoyées anonymement par le lanceur d'alerte, vous faites appel au Consortium International pour le Journalisme d'Investigation (ICIJ). Au total, une centaine de vos confrères internationaux ont travaillé ensemble pour révéler en avril 2016 le scandale des <b><i>Panama papers</i></b>.<br><a href="https://www.francetvinfo.fr/economie/fraude/panama-papers/video-france-2-cash-investigation-platini-messi-le-premier-ministre-islandais-panama-papers-enquete-sur-les-societes-offshore-et-les-paradis-fiscaux_1388631.html" target=_blank>En savoir plus</a></div>
   
 		</center>
   </body>
